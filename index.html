@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NexaMart – A premium product marketplace. Browse, filter, and discover curated tech products from top creators." />
+  <title>NexaMart – Premium Product Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#" id="logo-link">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Nexa<strong>Mart</strong></span>
+      </a>
+
+      <nav class="header-nav" id="header-nav">
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#featured" class="nav-link">Featured</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-icon" id="search-toggle-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="btn-icon cart-btn" id="cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search overlay -->
+    <div class="search-overlay" id="search-overlay">
+      <div class="search-box">
+        <svg class="search-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Search products, owners, categories…" autocomplete="off" />
+        <button id="search-close-btn" aria-label="Close search">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── HERO ────────────────────────────────────────────── -->
+  <section class="hero" id="featured">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up">🔥 New Arrivals This Week</div>
+      <h1 class="hero-title animate-fade-up delay-1">
+        Discover Premium<br /><span class="gradient-text">Tech Products</span>
+      </h1>
+      <p class="hero-subtitle animate-fade-up delay-2">
+        Curated marketplace with the best electronics from verified creators worldwide.
+      </p>
+      <div class="hero-cta animate-fade-up delay-3">
+        <a href="#products" class="btn-primary" id="explore-btn">Explore Products</a>
+        <a href="#" class="btn-ghost" id="hero-learn-btn">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Featured Spotlight -->
+    <div class="hero-spotlight animate-slide-right delay-2" id="spotlight-card">
+      <div class="spotlight-img-wrap">
+        <img src="images/headphones.jpg" alt="Featured: ProSound X1 Headphones" class="spotlight-img" id="spotlight-img" />
+        <div class="spotlight-badge">⭐ Editor's Pick</div>
+      </div>
+      <div class="spotlight-info">
+        <span class="spotlight-category">Audio</span>
+        <h3 class="spotlight-title" id="spotlight-title">ProSound X1</h3>
+        <p class="spotlight-owner" id="spotlight-owner">by SoundCraft Studios</p>
+        <p class="spotlight-price" id="spotlight-price">$249.99</p>
+        <button class="btn-add-cart" id="spotlight-cart-btn" data-id="1">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ────────────────────────────────────────── -->
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-num" data-target="1200">0</span><span class="stat-label">Products</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><span class="stat-num" data-target="340">0</span><span class="stat-label">Sellers</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><span class="stat-num" data-target="98">0</span><span class="stat-label">% Satisfaction</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><span class="stat-num" data-target="50">0</span><span class="stat-label">Categories</span></div>
+  </div>
+
+  <!-- ── PRODUCTS SECTION ─────────────────────────────────── -->
+  <main class="products-section" id="products">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">All Products</h2>
+        <p class="section-subtitle">Browse our hand-picked collection</p>
+      </div>
+      <div class="view-toggle" id="view-toggle">
+        <button class="view-btn active" id="grid-view-btn" aria-label="Grid view" title="Grid view">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </button>
+        <button class="view-btn" id="list-view-btn" aria-label="List view" title="List view">
+          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ── FILTERS ───────────────────────────────────────── -->
+    <div class="filters-wrap" id="filters-wrap">
+      <div class="filter-group">
+        <span class="filter-label">Category</span>
+        <div class="filter-chips" id="category-chips" role="group" aria-label="Category filter">
+          <button class="chip active" data-filter="all" id="chip-all">All</button>
+          <button class="chip" data-filter="audio" id="chip-audio">Audio</button>
+          <button class="chip" data-filter="wearables" id="chip-wearables">Wearables</button>
+          <button class="chip" data-filter="accessories" id="chip-accessories">Accessories</button>
+          <button class="chip" data-filter="gaming" id="chip-gaming">Gaming</button>
+          <button class="chip" data-filter="cameras" id="chip-cameras">Cameras</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Price Range</span>
+        <div class="price-range-wrap">
+          <input type="range" id="price-slider" min="0" max="500" value="500" step="10" aria-label="Maximum price filter" />
+          <span class="price-value" id="price-display">Up to $500</span>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Sort By</span>
+        <select class="sort-select" id="sort-select" aria-label="Sort products">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="rating">Top Rated</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+
+      <div class="filter-results" id="filter-results">
+        <span id="result-count">12 products</span>
+        <button class="btn-clear-filters" id="clear-filters-btn">Clear Filters</button>
+      </div>
+    </div>
+
+    <!-- ── PRODUCT GRID ──────────────────────────────────── -->
+    <div class="product-grid" id="product-grid" role="list">
+      <!-- Cards injected by JS -->
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty-state hidden" id="empty-state">
+      <div class="empty-icon">🔍</div>
+      <h3>No products found</h3>
+      <p>Try adjusting your filters or search terms.</p>
+      <button class="btn-primary" id="reset-btn">Reset Filters</button>
+    </div>
+
+    <!-- ── NAVIGATOR ─────────────────────────────────────── -->
+    <div class="navigator" id="navigator">
+      <button class="nav-arrow" id="prev-btn" aria-label="Previous product">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Prev</span>
+      </button>
+      <div class="nav-info">
+        <span id="nav-current">1</span>
+        <span class="nav-sep">of</span>
+        <span id="nav-total">12</span>
+      </div>
+      <button class="nav-arrow" id="next-btn" aria-label="Next product">
+        <span>Next</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <!-- ── ABOUT ───────────────────────────────────────────── -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <span class="about-tag">About NexaMart</span>
+        <h2>Built for creators,<br />loved by shoppers.</h2>
+        <p>NexaMart connects passionate product creators with tech enthusiasts who care about quality. Every product is verified and curated by our team.</p>
+        <div class="about-features">
+          <div class="feature-pill">✅ Verified Sellers</div>
+          <div class="feature-pill">🚚 Fast Shipping</div>
+          <div class="feature-pill">🔒 Secure Checkout</div>
+          <div class="feature-pill">♻️ Easy Returns</div>
+        </div>
+      </div>
+      <div class="about-stats-grid">
+        <div class="about-stat-card"><span class="about-stat-num">12K+</span><span>Happy Customers</span></div>
+        <div class="about-stat-card accent"><span class="about-stat-num">4.9★</span><span>Average Rating</span></div>
+        <div class="about-stat-card"><span class="about-stat-num">50+</span><span>Categories</span></div>
+        <div class="about-stat-card accent"><span class="about-stat-num">99%</span><span>Uptime</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Nexa<strong>Mart</strong></span>
+        <p>Premium marketplace for modern tech.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-links">
+        <h4>Categories</h4>
+        <a href="#">Audio</a>
+        <a href="#">Wearables</a>
+        <a href="#">Gaming</a>
+        <a href="#">Cameras</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 NexaMart. Crafted with ❤️ for tech lovers.</p>
+    </div>
+  </footer>
+
+  <!-- ── PRODUCT DETAIL MODAL ─────────────────────────────── -->
+  <div class="modal-overlay hidden" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card" id="modal-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TOAST NOTIFICATION ───────────────────────────────── -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
